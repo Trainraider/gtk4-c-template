@@ -45,6 +45,8 @@ debug: options $(BIN) | mkdirs
 options:
 	@echo Build options:
 	@echo ""
+	@echo "Output Dir: $(BLD)"
+	@echo ""
 	@echo "CFLAGS  = $(CFLAGS)"
 	@echo ""
 	@echo "LDFLAGS = $(LDFLAGS)"
@@ -75,7 +77,7 @@ $(BLD)/data.h : $(BLD)/data.gresource.xml $(BLD)/window_main.ui  $(RESOURCES) $(
 	glib-compile-resources --sourcedir=$(BLD) --sourcedir=$(DATA) --generate-header $< --target=$@;\
 
 #General rule to compile blueprint files
-$(BLD)/%.ui: $(UI)/%.blp
+$(BLD)/%.ui: $(UI)/%.blp | mkdirs
 	@blueprint-compiler compile --output $@ $<
 
 $(BLD)/data.gresource.xml : $(DATA)/data.gresource.xml.pre | mkdirs
