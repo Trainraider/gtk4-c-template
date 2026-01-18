@@ -12,6 +12,15 @@ Window window_main {
     orientation: vertical;
     valign: center;
     spacing: 20;
+    Picture {
+      file: "resource:///com/email/name/template_app/image.jpg";
+      can-shrink: true;
+      content-fit: scale_down;
+    }
+    Image {
+      resource: "/com/email/name/template_app/image.jpg";
+      pixel-size: 120;
+    }
     Box {
       orientation: horizontal;
       halign: center;

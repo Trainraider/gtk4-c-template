@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="__PREFIX__">
     <file>window_main.ui</file>
+    <file>image.jpg</file>
   </gresource>
 </gresources>
