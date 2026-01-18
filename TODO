@@ -1,4 +1,4 @@
-*add build targets:
+* add build targets:
     tar.gz
     flatpak
     appimage

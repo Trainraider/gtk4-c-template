@@ -1,31 +1,48 @@
-## GTK+ 3 Glade C Template
+## GTK4 C Template
 
-The project is meant to be an easy yet minimal starting point for any GTK+ 3 project. Initial setup is just setting your project name and other info in config.mk. Resources are integrated into the executable using GResource. More complete documentation [here.](https://github.com/Trainraider/gtk3-glade-c-template/wiki)
+The project is meant to be a minimal yet complete starting point for any GTK 4 project. Initial setup is just setting your project name and other info in `config.mk` and swapping the LICENSE file. Resources are integrated into the executable using GResource. The UI is in the new blueprint (.blp) file format, and is convenient to edit in Workbench.
 
 ___
 ### Getting Started:
-GTK+ 3.0 library headers and Make are required to build this project. Glade is needed to edit the user interface. GCC or Clang is probably required. This hasn't been tested with Windows and probably isn't portable there yet.
+#### Requirements:
+* GTK4 library headers
+* blueprint-compiler
+* make
+* pkg-config
+* GCC
+* Workbench (Optional)
+* clang-format (Optional)
+
+Workbench is only officially available on flathub:  
+
+https://flatpak.org/setup/  
+
+https://flathub.org/apps/re.sonny.Workbench  
+
+```
+flatpak install flathub re.sonny.Workbench
+```
 
 Debian or Ubuntu based linux distro:
 
 ```
-$ sudo apt install libgtk-3-dev glade
+sudo apt install libgtk-4-dev blueprint-compiler build-essential pkg-config clang-format
 ```
 
-The project can be configured in config.mk to set the project's version, name etc. These are then made available to the program as macros, so you never need these things listed in multiple places.
+The project can be configured in `config.mk` to set the project's version, name etc. These are then made available to the program as macros, so you never need these things listed in multiple places.
 
 The following macros are available to the C source files:
 
-    VERSION   //The project's version number
-	TARGET    //Name without spaces/ executable name
-    NAME      //The project's name
-    AUTHOR    //Your name
-	APP_ID    //Your email/website and app name in reverse url format
-	          //  e.g. com.gmail.johndoe.myapp
-	APP_PREFIX//APP_ID with forward slashes instead of periods. Used for
-	          //  getting resources
-			  //  e.g. /com/gmail/johndoe/myapp
-    COPYRIGHT //A copyright message e.g. "Copyright (c) 2021"
+    VERSION     //The project's version number
+	TARGET      //Name without spaces/ executable name
+    NAME        //The project's name
+    AUTHOR      //Your name
+	APP_ID      //Your email/website and app name in reverse url format
+	            //  e.g. com.gmail.johndoe.myapp
+	APP_PREFIX  //APP_ID with forward slashes instead of periods. Used for
+	            //  getting resources
+		    //  e.g. /com/gmail/johndoe/myapp
+    COPYRIGHT   //A copyright message e.g. "Copyright (c) 2026"
 
 
 ___
@@ -52,40 +69,3 @@ ___
 #### You can clean up project files with:
 
 	$ make clean
-
-___
-
-### Hello World Tutorial:
-
-Edit source/main.c.
-At the bottom of the file, add the following lines:
-
-```
-void hello_world()
-{
-    printf("Hello world!");
-}
-```
-
-* Now open window_main.glade with Glade.
-* Click the "Control" button.
-* Click GtkButton, then click the blank window in the editor.
-
-* on the "Signals" tab.
-In the row that says "clicked", and the column labled "Handler",
-type the name of our new function from main.c, hello_world.
-* save window_main.glade
-
-* Now from inside the root directory of this project, run:
-```
-    $ make
-    $ ./build/bin/template_app
-```
-"Hello world!" will print in the terminal every time the window is clicked.
-
-The following more in-depth tutorial was referenced by this project
-and is recommended:
-https://prognotes.net/gtk-glade-c-programming/
-
-That link died, here's an archived version:
-https://web.archive.org/web/20210628084247/https://prognotes.net/gtk-glade-c-programming/

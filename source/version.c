@@ -1,6 +1,6 @@
 #include "version.h"
-/*Display version information and exit */
-void version()
+/* Display version information and exit */
+void version(void)
 {
 #ifdef DEBUG
         printf(NAME " " VERSION "-Debug Build\n\n");
