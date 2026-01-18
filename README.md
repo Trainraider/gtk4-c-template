@@ -69,3 +69,17 @@ ___
 #### You can clean up project files with:
 
 	$ make clean
+___
+### Helpful Links
+GTK 4 Tutorial:
+
+https://docs.gtk.org/gtk4/getting_started.html
+
+Blueprint language reference:
+
+https://gnome.pages.gitlab.gnome.org/blueprint-compiler/
+
+Crystal-lang with Blueprint GTK4 Tutorial:
+(This is helpful even if you aren't using Crystal.)
+
+https://ultimate-gtk4-crystal-guide.geopjr.dev/en/extra/blueprint
