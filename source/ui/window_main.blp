@@ -8,32 +8,4 @@ Window window_main {
   default-width: 640;
   default-height: 480;
   icon-name: "template_app";
-  Box {
-    orientation: vertical;
-    valign: center;
-    spacing: 20;
-    Box {
-      orientation: horizontal;
-      halign: center;
-      spacing: 20;
-      Button counter_1{
-        label: _("Counter 1");
-        clicked => $on_button_1_clicked();
-      }
-      Label label_1{
-        label: _("0");
-      }
-    }
-    Box {
-      orientation: horizontal;
-      halign: center;
-      spacing: 20;
-      Button counter_2{
-        label: _("Counter 2");
-      }
-      Label label_2{
-        label: _("0");
-      }
-    }
-  }
 }
