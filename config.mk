@@ -23,7 +23,7 @@ PD = $(shell pwd)
 
 #Build/Source paths
 SRC     ?= $(PD)/source
-DBG     ?= $(PD)/build
+DBG     ?= $(PD)/debug
 RLS     ?= $(PD)/build
 DATA    ?= $(SRC)/data
 UI      ?= $(SRC)/ui

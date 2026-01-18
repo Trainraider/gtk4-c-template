@@ -4,8 +4,8 @@
 include config.mk
 
 #Functions_______________________________________________________________________
-RM = -yes | rm -f
-RMRF = rm -rf
+RM = -rm -f
+RMRF = -rm -rf
 CP = yes | cp -f
 
 ROOTCHECK = \
@@ -119,6 +119,7 @@ uninstall :
 clean :
 	@$(RM) $(DATA)/*.xml~ $(DATA)/*.xml#
 	@$(RMRF) $(BLD)
+	@$(RMRF) $(DBG)
 
 format :
 	@clang-format -style="{BasedOnStyle: webkit, IndentWidth: 8,AlignConsecutiveDeclarations: true, AlignConsecutiveAssignments: true, ReflowComments: true, SortIncludes: true}" -i $(SRC)/*.{c,h}
