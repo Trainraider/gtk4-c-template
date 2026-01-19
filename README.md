@@ -10,6 +10,7 @@ ___
 * make
 * pkg-config
 * GCC
+* LibAdwaita (Optional for more GTK widgets)
 * Workbench (Optional)
 * clang-format (Optional)
 
@@ -26,7 +27,13 @@ flatpak install flathub re.sonny.Workbench
 Debian or Ubuntu based linux distro:
 
 ```
-sudo apt install libgtk-4-dev blueprint-compiler build-essential pkg-config clang-format
+sudo apt install libgtk-4-dev blueprint-compiler build-essential pkg-config libadwaita-1-dev clang-format
+```
+
+It's also recommended to use Icon Library to find icons to use in your project for things like buttons and elsewhere with UI symbols:
+
+```
+flatpak install flathub org.gnome.design.IconLibrary
 ```
 
 The project can be configured in `config.mk` to set the project's version, name etc. These are then made available to the program as macros, so you never need these things listed in multiple places.

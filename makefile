@@ -25,6 +25,8 @@ BLD := $(shell readlink -f $(BLD))
 
 BIN           = $(BLD)/bin/$(TARGET)
 OBJ           = $(BLD)/main.o $(BLD)/version.o $(BLD)/data.o
+UI            = $(BLD)/window_main.ui
+
 DESKTOP       = $(BLD)/$(TARGET).desktop
 
 #Required flags
@@ -69,15 +71,15 @@ $(BLD)/main.o : $(SRC)/main.c $(SRC)/version.h $(BLD)/data.h | mkdirs
 $(BLD)/version.o : $(SRC)/version.c $(SRC)/version.h | mkdirs
 $(BLD)/data.o : $(BLD)/data.c $(BLD)/data.h | mkdirs
 
-$(BLD)/data.c : $(BLD)/data.gresource.xml $(BLD)/window_main.ui $(RESOURCES) $(UI_RESOURCES) | mkdirs
+$(BLD)/data.c : $(BLD)/data.gresource.xml $(BLD)/window_main.ui $(RESOURCES) $(UI) | mkdirs
 	@glib-compile-resources --sourcedir=$(BLD) --sourcedir=$(DATA) --generate-source $< --target=$@;\
 
-$(BLD)/data.h : $(BLD)/data.gresource.xml $(BLD)/window_main.ui  $(RESOURCES) $(UI_RESOURCES) | mkdirs
+$(BLD)/data.h : $(BLD)/data.gresource.xml $(BLD)/window_main.ui  $(RESOURCES) $(UI) | mkdirs
 	@cd $(DATA);\
 	glib-compile-resources --sourcedir=$(BLD) --sourcedir=$(DATA) --generate-header $< --target=$@;\
 
 #General rule to compile blueprint files
-$(BLD)/%.ui: $(UI)/%.blp | mkdirs
+$(BLD)/%.ui: $(BLP)/%.blp | mkdirs
 	@blueprint-compiler compile --output $@ $<
 
 $(BLD)/data.gresource.xml : $(DATA)/data.gresource.xml.pre | mkdirs
