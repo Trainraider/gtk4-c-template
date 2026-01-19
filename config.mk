@@ -26,10 +26,9 @@ SRC     ?= $(PD)/source
 DBG     ?= $(PD)/debug
 RLS     ?= $(PD)/build
 DATA    ?= $(SRC)/data
-UI      ?= $(SRC)/ui
+BLP     ?= $(SRC)/blueprints
 
 #Files
-UI_RESOURCES ?= $(UI)/window_main.blp
 RESOURCES    ?= $(DATA)/icon.svg
 
 #Dependencies
