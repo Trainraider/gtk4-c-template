@@ -34,11 +34,9 @@ RESOURCES    ?= $(DATA)/icon.svg
 #Dependencies
 PKG_CONFIG ?= pkg-config
 
-INCS = `$(PKG_CONFIG) --cflags gtk4` \
-#      `$(PKG_CONFIG) --cflags next_library`
+INCS = `$(PKG_CONFIG) --cflags gtk4 libadwaita-1` \
 
-LIBS = `$(PKG_CONFIG) --libs gtk4` \
-#      `$(PKG_CONFIG) --libs next_library`
+LIBS = `$(PKG_CONFIG) --libs gtk4 libadwaita-1` \
 
 #Optional flags
 CFLAGS         ?= -march=native -pipe
