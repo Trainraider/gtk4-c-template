@@ -4,6 +4,10 @@ The project is meant to be a minimal yet complete starting point for any GTK 4 p
 
 ___
 ### Getting Started:
+Check out this project's wiki for more in-depth information:
+
+https://github.com/Trainraider/gtk4-c-template/wiki
+
 #### Requirements:
 * GTK4 library headers
 * blueprint-compiler
